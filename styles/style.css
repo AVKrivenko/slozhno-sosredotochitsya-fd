@@ -373,7 +373,7 @@ html.theme-dark .decorative__element {
     justify-self: end; 
     align-self: start;
     margin-block-start: 192px; 
-    margin-inline-end: clamp(10px, 5vw, 20px);/
+    margin-inline-end: clamp(10px, 5vw, 20px);
   }
 
   .heading {

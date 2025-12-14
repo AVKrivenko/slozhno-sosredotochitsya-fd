@@ -3,7 +3,7 @@
   и их переопределение под различные устройства
 */
 
-:root{
+:root {
   --page-bg-image: url(../images/cover-image.png);
   --page-bg-color: #000;
   --text-color:#F1B2CE;
@@ -12,5 +12,5 @@
   --title-header:#DB00FF;
   --title-color:#000028;
   
-}
+}a
 
