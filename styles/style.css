@@ -156,7 +156,7 @@ html.theme-dark .decorative__element {
   font-weight: 700;
   font-size: 18px;
   justify-self: end;
-  align-self: start;
+  align-self: center;
   color: #000028;
   background-color: var(--accent-color);
   margin: 5px clamp(10px, 5vw, 20px) 0 0;
