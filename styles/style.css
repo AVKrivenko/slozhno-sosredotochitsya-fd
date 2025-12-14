@@ -7,7 +7,7 @@ html, body {
   margin: 0;
   padding: 0;
   width: 100%;
-  overflow-x: hidden; /* Важно! */
+  overflow-x: hidden;
 }
 
 button {
@@ -26,14 +26,13 @@ ul {
 }
 
 .page {
-  /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
   background-color: #000028;
   margin: 0 auto;
   font-family: 'IBM Plex mono', sans-serif;
   color: var(--text-color);
-  max-width: 1024px; 
-  width: 100%; 
-  min-width: 320px; 
+  max-width: 1024px;
+  width: 100%;
+  min-width: 320px;
   background-image: var(--page-bg-image);
   background-position: center;
   background-size: cover;
@@ -66,14 +65,14 @@ ul {
 
 .decorated-zone::before {
   top: 20px;
-  right: clamp(10px, 5vw, 20px); 
+  right: clamp(10px, 5vw, 20px);
   border-left: none;
   border-bottom: none;
 }
 
 .decorated-zone::after {
   bottom: 20px;
-  left: clamp(10px, 5vw, 20px); 
+  left: clamp(10px, 5vw, 20px);
   border-right: none;
   border-top: none;
 }
@@ -87,7 +86,7 @@ ul {
   color: var(--btn-color);
   text-align: center;
   text-transform: uppercase;
-  z-index: 2; 
+  z-index: 2;
   display: none;
 }
 
@@ -112,11 +111,11 @@ html.theme-dark .decorative__element {
 
 .header__theme-menu {
   grid-row: 1;
-  justify-self: center; 
-  align-self: start; 
+  justify-self: center;
+  align-self: start;
   margin-block-start: 20px;
   margin-inline: 0;
-  width: auto; 
+  width: auto;
 }
 
 .header__theme-menu-list {
@@ -370,9 +369,9 @@ html.theme-dark .decorative__element {
   }
 
   .header__theme-menu {
-    justify-self: end; 
+    justify-self: end;
     align-self: start;
-    margin-block-start: 192px; 
+    margin-block-start: 192px;
     margin-inline-end: clamp(10px, 5vw, 20px);
   }
 
@@ -399,7 +398,7 @@ html.theme-dark .decorative__element {
   .concentration__card {
     flex-direction: column;
   }
-  
+
   .concentration__card-item {
     width: 100%;
   }
@@ -446,12 +445,12 @@ html.theme-dark .decorative__element {
 
   .decorated-zone::before {
     top: 10px;
-    right: clamp(5px, 5vw, 10px); 
+    right: clamp(5px, 5vw, 10px);
   }
 
   .decorated-zone::after {
     bottom: 10px;
-    left: clamp(5px, 5vw, 10px); 
+    left: clamp(5px, 5vw, 10px);
   }
 
   .decorative__element {
@@ -467,7 +466,7 @@ html.theme-dark .decorative__element {
     grid-template-rows: auto auto;
     margin-block-end: 50px;
   }
-  
+
   body .сoncentration {
     margin-block-end: 50px;
   }
