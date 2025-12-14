@@ -372,12 +372,12 @@ html.theme-dark .decorative__element {
     justify-self: end;
     align-self: start;
     margin-block-start: 192px;
-    margin-inline-end: clamp(10px, 5vw, 20px);
+    margin-inline-end: clamp(10px, 5vw, 10px);
   }
 
   .heading {
     font-size: clamp(116px, 15vw, 120px);
-    line-height: 85%;
+    line-height: 83%;
   }
 
   .header__theme-menu-list {
@@ -386,8 +386,8 @@ html.theme-dark .decorative__element {
   }
 
   .header-text {
-    margin-block-start: 4.5em;
-    max-width: min(364px, calc(100% - 40px));
+   margin:  0;
+   max-width: min(364px, calc(100% - 40px));
   }
 
   .why-hard {
@@ -413,11 +413,13 @@ html.theme-dark .decorative__element {
 
   .gallery {
     min-height: 810px;
+    margin-block-end: 50px;
   }
 
   .footer {
     min-height: 1024px;
   }
+  .
 }
 
 /* Медиа-запрос для 375px */
