@@ -89,7 +89,10 @@ ul {
   text-align: center;
   text-transform: uppercase;
   z-index: 2; 
+  display: none;
+
 }
+
 .decorative__element::after {
   content: "";
   width: 9px;
@@ -98,7 +101,14 @@ ul {
   background-color: var(--accent-color);
   box-shadow: 0 0 4px var(--accent-color);
 }
-
+html.theme-dark .decorative__element {
+  display: flex;
+}
+@media (prefers-color-scheme: dark) {
+  html.theme-auto .decorative__element {
+    display: flex;
+  }
+}
 .header__theme-menu {
   grid-row: 1;
   justify-self: center; 
