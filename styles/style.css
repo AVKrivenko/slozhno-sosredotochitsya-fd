@@ -47,7 +47,7 @@ ul {
   display: grid;
   grid-template-rows: 1fr min-content 1fr;
   height: 100vh;
-  padding-right: (10px, 5vw, 20px);
+  padding-right: clamp(10px, 5vw, 20px);
 }
 
 .decorated-zone {
@@ -81,7 +81,7 @@ ul {
 .decorative__element {
   position: absolute;
   top: 20px;
-  right: calc(clamp(10px, 5vw, 20px) + 8px); /* Возвращаем оригинальное значение */
+  right: calc(clamp(10px, 5vw, 20px) + 8px);
   align-items: center;
   gap: 10px;
   color: var(--btn-color);
@@ -99,27 +99,31 @@ ul {
   background-color: var(--accent-color);
   box-shadow: 0 0 4px var(--accent-color);
 }
+
 html.theme-dark .decorative__element {
   display: flex;
 }
+
 @media (prefers-color-scheme: dark) {
   html.theme-auto .decorative__element {
     display: flex;
   }
 }
+
 .header__theme-menu {
   grid-row: 1;
   justify-self: center; 
   align-self: start; 
   margin-block-start: 20px;
-  margin-inline: 0; /* Убираем боковые margin */
+  margin-inline: 0;
   width: auto; 
 }
+
 .header__theme-menu-list {
   display: flex;
   flex-direction: row;
   gap: 15px;
-  justify-content: center; /* Центрируем кнопки внутри списка */
+  justify-content: center;
   align-items: center;
 }
 
@@ -138,12 +142,11 @@ html.theme-dark .decorative__element {
   grid-row: 2;
   text-shadow: 4px 4px 0 var(--accent-color);
   justify-self: start;
-
 }
 
 .heading {
   color: var(--title-header);
-  font-size:  157px; /* Адаптивный шрифт */
+  font-size: 157px;
   line-height: 83%;
   font-weight: 700;
 }
@@ -159,7 +162,6 @@ html.theme-dark .decorative__element {
   background-color: var(--accent-color);
   margin: 5px clamp(10px, 5vw, 20px) 0 0;
   display: block;
- 
 }
 
 .header__theme-menu-button_active {
@@ -310,7 +312,7 @@ html.theme-dark .decorative__element {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   grid-template-rows: repeat(3, fit-content);
-  gap: clamp(10px, 3vw, 20px); /* Адаптивный gap */
+  gap: clamp(10px, 3vw, 20px);
   box-sizing: border-box;
 }
 
@@ -401,9 +403,10 @@ html.theme-dark .decorative__element {
   .concentration__card-item {
     width: 100%;
   }
+
   .concentration__title {
     max-width: 236px;
-}
+  }
 
   .rules {
     grid-template-columns: minmax(180px, 236px) minmax(360px, 472px);
@@ -423,11 +426,11 @@ html.theme-dark .decorative__element {
   .header {
     min-height: 668px;
     margin-block-end: 40px;
-    padding: 0  10px
+    padding: 0 10px;
   }
 
   .header__theme-menu {
-    margin: 75px 0 0 ;
+    margin: 75px 0 0;
   }
 
   .heading {
@@ -437,13 +440,13 @@ html.theme-dark .decorative__element {
 
   .header-text {
     margin-right: 10px;
-    margin-block-start:-10px;
+    margin-block-start: -10px;
     max-width: 100%;
   }
 
   .decorated-zone::before {
     top: 10px;
-     right: clamp(5px, 5vw, 10px); 
+    right: clamp(5px, 5vw, 10px); 
   }
 
   .decorated-zone::after {
@@ -455,8 +458,8 @@ html.theme-dark .decorative__element {
     top: 12px;
   }
 
-  .main{
-  padding: 0 10px;
+  .main {
+    padding: 0 10px;
   }
 
   .why-hard {
@@ -465,16 +468,18 @@ html.theme-dark .decorative__element {
     margin-block-end: 50px;
   }
   
-   body .сoncentration
-    {
+  body .сoncentration {
     margin-block-end: 50px;
   }
+
   .concentration__card {
     flex-direction: column;
   }
-    .concentration__title {
+
+  .concentration__title {
     max-width: 100%;
-}
+  }
+
   .rules {
     grid-template-columns: 1fr;
     grid-template-rows: auto auto auto;
@@ -482,10 +487,11 @@ html.theme-dark .decorative__element {
     margin-block-end: 30px;
   }
 
-  .gallery{
+  .gallery {
     margin-block-end: 40px;
   }
-     .gallery-title{
+
+  .gallery-title {
     margin-block-end: 10px;
   }
 
@@ -503,4 +509,3 @@ html.theme-dark .decorative__element {
     font-size: clamp(100px, 12vw, 116px);
   }
 }
-
