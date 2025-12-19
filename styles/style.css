@@ -3,13 +3,6 @@
   box-sizing: border-box;
 }
 
-html, body {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  overflow-x: hidden;
-}
-
 button {
   background: none;
   border: none;
@@ -19,34 +12,39 @@ button {
   outline: none;
 }
 
-ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+.page, .header, .main, .footer {
+ 
+  max-width: 100%; 
 }
+.text, .title, .heading, .header-heading, .titel-decor, .gallery-title {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  max-width: 100%; 
+}
+
+
 
 .page {
   background-color: #000028;
   margin: 0 auto;
   font-family: 'IBM Plex mono', sans-serif;
   color: var(--text-color);
-  max-width: 1024px;
   width: 100%;
-  min-width: 320px;
   background-image: var(--page-bg-image);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  
 }
 
 .header {
-  min-height: 768px;
   margin-block-end: 60px;
   display: grid;
   grid-template-rows: 1fr min-content 1fr;
   height: 100vh;
-  padding-right: clamp(10px, 5vw, 20px);
+ 
+  min-height: 768px;
 }
 
 .decorated-zone {
@@ -96,18 +94,14 @@ ul {
   height: 9px;
   border-radius: 50%;
   background-color: var(--accent-color);
-  box-shadow: 0 0 4px var(--accent-color);
+   box-shadow: 0px 0px 4px 2px var(--accent-color);
 }
 
 html.theme-dark .decorative__element {
   display: flex;
 }
 
-@media (prefers-color-scheme: dark) {
-  html.theme-auto .decorative__element {
-    display: flex;
-  }
-}
+
 
 .header__theme-menu {
   grid-row: 1;
@@ -115,13 +109,13 @@ html.theme-dark .decorative__element {
   align-self: start;
   margin-block-start: 20px;
   margin-inline: 0;
-  width: auto;
+  inline-size: auto;
 }
 
 .header__theme-menu-list {
   display: flex;
   flex-direction: row;
-  gap: 15px;
+  gap: 14px;
   justify-content: center;
   align-items: center;
 }
@@ -133,7 +127,7 @@ html.theme-dark .decorative__element {
   color: var(--btn-color);
   text-transform: lowercase;
   font-family: 'IBM Plex mono', monospace;
-  padding: 2px 15px;
+  padding: 2px 10px;
   border: 1px solid transparent;
 }
 
@@ -141,13 +135,15 @@ html.theme-dark .decorative__element {
   grid-row: 2;
   text-shadow: 4px 4px 0 var(--accent-color);
   justify-self: start;
+  margin: 0;
 }
 
 .heading {
   color: var(--title-header);
-  font-size: 157px;
+  font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   line-height: 83%;
   font-weight: 700;
+
 }
 
 .header-text {
@@ -159,8 +155,11 @@ html.theme-dark .decorative__element {
   align-self: center;
   color: #000028;
   background-color: var(--accent-color);
-  margin: 5px clamp(10px, 5vw, 20px) 0 0;
+  margin: 0 clamp(10px, 5vw, 20px) 0 0;
   display: block;
+  inline-size: 491px; 
+  margin-block-start: -10px;
+
 }
 
 .header__theme-menu-button_active {
@@ -187,17 +186,32 @@ html.theme-dark .decorative__element {
   box-sizing: border-box;
 }
 
-.why-hard {
-  min-height: 508px;
+.section {
   width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
+  min-width: 0;
+}
+
+.card-item {
+  min-width: 0; 
+  overflow: hidden;
+}
+.why-hard {
+
   display: grid;
   grid-template-columns: 1fr 2fr;
-  margin-bottom: 75px;
+  margin-bottom: 80px;
   gap: 10px;
+
 }
 
 .title {
-  color: var(--accent-color);
+  color: var(--title);
   font-weight: 700;
   font-size: 18px;
   margin: 0;
@@ -219,6 +233,10 @@ html.theme-dark .decorative__element {
   background-color: var(--accent-color);
   color: var(--title-color);
   margin: 0;
+  line-height: 23.4px;
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 10px;
 }
 
 .accent-link {
@@ -243,50 +261,37 @@ html.theme-dark .decorative__element {
 }
 
 .сoncentration {
-  min-height: 498px;
   margin-block-end: 80px;
-  width: 100%;
 }
 
 .concentration__card {
-  display: flex;
-  flex-direction: row;
+   display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Всегда 3 колонки */
   gap: 20px;
   width: 100%;
-}
-
-.concentration__card-item {
-  width: 100%;
-  padding: 0;
+  grid-auto-flow: row;
+  grid-auto-rows: 1fr;
 }
 
 .concentration__title {
   margin: 0;
   margin-bottom: 20px;
-  max-width: 315px;
-}
-
-.concentration__card-item-title {
-  margin-bottom: 10px;
+  inline-size: 315px;
 }
 
 .rules {
-  width: 100%;
   display: grid;
   grid-template-columns: 1fr 2fr;
   gap: 15px;
-  margin-block-end: 80px;
+  margin-block-end: 70px;
 }
 
 .rules__card {
   width: 100%;
+  padding-bottom: 10px;
 }
 
-.rules-title {
-  line-height: 23.4px;
-  font-size: 18px;
-  font-weight: 700;
-}
+
 
 .rules__card-title {
   font-size: 18px;
@@ -294,13 +299,13 @@ html.theme-dark .decorative__element {
   line-height: 23.4px;
   background-color: var(--accent-color);
   color: #000028;
+  margin-top: 10px;
   margin-bottom: 10px;
-  margin-top: 20px;
 }
 
 .gallery {
-  margin-block-end: 60px;
-  min-height: 1091px;
+  margin-block-end: 50px;
+
 }
 
 .gallery-title {
@@ -324,6 +329,7 @@ html.theme-dark .decorative__element {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
 }
 
 .gallery__item:nth-child(1) {
@@ -352,10 +358,13 @@ html.theme-dark .decorative__element {
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 100vh;
   min-height: 768px;
   position: relative;
-  width: 100%;
   padding: 0 clamp(10px, 5vw, 20px);
+  box-sizing: border-box;
+  
+  
 }
 
 .footer-heading {
@@ -366,6 +375,7 @@ html.theme-dark .decorative__element {
 @media (max-width: 768px) {
   .header {
     min-height: 1024px;
+  
   }
 
   .header__theme-menu {
@@ -374,11 +384,14 @@ html.theme-dark .decorative__element {
     margin-block-start: 192px;
     margin-inline-end: clamp(10px, 5vw, 10px);
   }
+  
 
   .heading {
-    font-size: clamp(116px, 15vw, 120px);
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
     line-height: 83%;
   }
+   .header__theme-menu {
+    margin-inline-end: clamp(10px, 5vw, 20px); }
 
   .header__theme-menu-list {
     flex-direction: column;
@@ -386,30 +399,27 @@ html.theme-dark .decorative__element {
   }
 
   .header-text {
-   margin:  0;
-   max-width: min(364px, calc(100% - 40px));
+   justify-self: end;
+    width: 364px;
   }
+ 
 
-  .why-hard {
-    grid-template-columns: minmax(180px, 236px) minmax(360px, 472px);
-    gap: 20px;
+  .why-hard-title{
+    inline-size: 236px;
   }
-
   .concentration__card {
+    display: flex;
     flex-direction: column;
   }
 
-  .concentration__card-item {
-    width: 100%;
-  }
 
+.concentration__card-item {
+  width: 100%;
+}
   .concentration__title {
-    max-width: 236px;
+    inline-size: 236px;
   }
 
-  .rules {
-    grid-template-columns: minmax(180px, 236px) minmax(360px, 472px);
-  }
 
   .gallery {
     min-height: 810px;
@@ -425,24 +435,20 @@ html.theme-dark .decorative__element {
 @media (max-width: 376px) {
   .header {
     min-height: 668px;
-    margin-block-end: 40px;
-    padding: 0 10px;
+   margin-block-end: 40px;
+   padding: 0 10px;
   }
 
   .header__theme-menu {
-    margin: 75px 0 0;
+    margin: 75px 15px 0 0;
+  }
+  .header-text { 
+  
+   
+    max-width: 100% ;
+    inline-size: 355px;
   }
 
-  .heading {
-    margin-block-start: 60px;
-    line-height: 82.5%;
-  }
-
-  .header-text {
-    margin-right: 10px;
-    margin-block-start: -10px;
-    max-width: 100%;
-  }
 
   .decorated-zone::before {
     top: 10px;
@@ -464,11 +470,17 @@ html.theme-dark .decorative__element {
 
   .why-hard {
     grid-template-columns: 1fr;
-    grid-template-rows: auto auto;
+    
     margin-block-end: 50px;
   }
-
-  body .сoncentration {
+  .why-hard-title{
+    inline-size: 355px;
+    margin-bottom: 10px;
+  }
+  .why-hard__card-title {
+   margin-bottom:0;
+  }
+  .сoncentration {
     margin-block-end: 50px;
   }
 
@@ -477,7 +489,8 @@ html.theme-dark .decorative__element {
   }
 
   .concentration__title {
-    max-width: 100%;
+    inline-size: 355px;
+     margin-bottom: 10px;
   }
 
   .rules {
@@ -503,9 +516,11 @@ html.theme-dark .decorative__element {
 
   .footer {
     min-height: 668px;
+    padding: 0 ;
+  }
+  .heading {
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+    line-height: 83%;
   }
 
-  .footer-heading .heading {
-    font-size: clamp(100px, 12vw, 116px);
-  }
 }
