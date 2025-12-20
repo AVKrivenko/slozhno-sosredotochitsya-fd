@@ -359,7 +359,7 @@ button {
     width: 364px;
   }
 
-  .card-item{
+  .card-item {
     margin-block-end: 5px;
   }
  
@@ -370,7 +370,7 @@ button {
   .why-hard-title {
     inline-size: 236px;
   }
-  .сoncentration{
+  .сoncentration {
     margin-block-end: 75px;
   }
   .concentration__card {
@@ -386,14 +386,14 @@ button {
   .concentration__title {
     inline-size: 236px;
   }
-  .rules{
+  .rules {
     margin-block-end: 75px;
   }
   .gallery {
     margin-block-end: 50px;
   }
 
-  .footer{
+  .footer {
     min-height: 1024px;
   }
  
