@@ -1,7 +1,3 @@
-/* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
-*, *::before, *::after {
-  box-sizing: border-box;
-}
 
 button {
   background: none;
@@ -16,18 +12,11 @@ button {
   max-width: 100%;
 }
 
-.text, .title, .heading, .header-heading, .titel-decor, .gallery-title {
-  overflow-wrap: break-word;
-  word-wrap: break-word;
-  max-width: 100%;
-}
-
 .page {
-  background-color: #000028;
+  background-color: var(--page-bg-color);
   margin: 0 auto;
   font-family: 'IBM Plex mono', sans-serif;
   color: var(--text-color);
-  width: 100%;
   background-image: var(--page-bg-image);
   background-position: center;
   background-size: cover;
@@ -53,7 +42,7 @@ button {
   position: absolute;
   width: 25px;
   height: 25px;
-  border: 1px solid var(--accent-color, #ff0070);
+  border: 1px solid var(--btn-color);
   z-index: 1;
 }
 
@@ -81,7 +70,7 @@ button {
   text-align: center;
   text-transform: uppercase;
   z-index: 2;
-  display: none;
+  display: flex;
 }
 
 .decorative__element::after {
@@ -90,7 +79,7 @@ button {
   height: 9px;
   border-radius: 50%;
   background-color: var(--accent-color);
-  box-shadow: 0 0 4px var(--accent-color);
+  box-shadow: 0 0 4px 2px var(--accent-color);
 }
 
 .header__theme-menu {
@@ -108,6 +97,7 @@ button {
   gap: 14px;
   justify-content: center;
   align-items: center;
+  list-style: none;
 }
 
 .header__theme-menu-button {
@@ -147,7 +137,7 @@ button {
   margin: 0 clamp(10px, 5vw, 20px) 0 0;
   display: block;
   inline-size: 491px;
-  margin-block-start: -10px;
+  margin-block-start: -20px;
 }
 
 .header__theme-menu-button_active {
@@ -178,23 +168,20 @@ button {
   width: 100%;
   max-width: 100%;
   box-sizing: border-box;
-  overflow-x: hidden;
-  overflow-wrap: break-word;
-  word-wrap: break-word;
   hyphens: auto;
   min-width: 0;
+  display: grid;
 }
 
 .card-item {
   min-width: 0;
-  overflow: hidden;
+  margin-block-end:5px;
 }
 
 .why-hard {
-  display: grid;
   grid-template-columns: 1fr 2fr;
-  margin-bottom: 80px;
   gap: 10px;
+  margin-block-end:75px;
 }
 
 .title {
@@ -248,7 +235,7 @@ button {
 }
 
 .сoncentration {
-  margin-block-end: 80px;
+  margin-block-end: 75px;
 }
 
 .concentration__card {
@@ -268,12 +255,7 @@ button {
   display: grid;
   grid-template-columns: 1fr 2fr;
   gap: 15px;
-  margin-block-end: 70px;
-}
-
-.rules__card {
-  width: 100%;
-  padding-bottom: 10px;
+  margin-block-end: 75px;
 }
 
 .rules__card-title {
@@ -282,23 +264,20 @@ button {
   line-height: 23.4px;
   background-color: var(--accent-color);
   color: #000028;
-  margin-top: 10px;
+  margin-top: 20px;
   margin-bottom: 10px;
 }
 
 .gallery {
-  margin-block-end: 50px;
-}
-
-.gallery-title {
-  margin-bottom: 20px;
+  margin-block-end: 55px;
+  gap: 5px;
 }
 
 .gallery-list {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   grid-template-rows: repeat(3, fit-content);
-  gap: clamp(10px, 3vw, 20px);
+  gap: clamp(10px, 3vw, 15px);
   box-sizing: border-box;
 }
 
@@ -337,7 +316,7 @@ button {
 }
 
 .footer {
-  display: flex;
+  display: grid;
   justify-content: center;
   align-items: center;
   height: 100vh;
@@ -348,6 +327,7 @@ button {
 }
 
 .footer-heading {
+  align-items: center;
   text-shadow: 2px 2px 0 var(--accent-color);
 }
 
@@ -366,7 +346,6 @@ button {
 
   .heading {
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
-    line-height: 83%;
   }
 
   .header__theme-menu-list {
@@ -375,17 +354,29 @@ button {
   }
 
   .header-text {
+  
     justify-self: end;
     width: 364px;
   }
 
+  .card-item{
+    margin-block-end: 5px;
+  }
+ 
+  .why-hard {
+    gap: 20px ;
+    margin-block-end: 75px;
+  }
   .why-hard-title {
     inline-size: 236px;
   }
-
+  .сoncentration{
+    margin-block-end: 75px;
+  }
   .concentration__card {
     display: flex;
     flex-direction: column;
+    gap: 15px;
   }
 
   .concentration__card-item {
@@ -395,19 +386,19 @@ button {
   .concentration__title {
     inline-size: 236px;
   }
-
+  .rules{
+    margin-block-end: 75px;
+  }
   .gallery {
-    min-height: 810px;
     margin-block-end: 50px;
   }
 
-  .footer {
+  .footer{
     min-height: 1024px;
   }
-}
-
+ 
 /* Медиа-запрос для 375px */
-@media (max-width: 376px) {
+@media (max-width: 475px) {
   .header {
     min-height: 668px;
     margin-block-end: 40px;
@@ -415,17 +406,18 @@ button {
   }
 
   .header__theme-menu {
-    margin: 75px 15px 0 0;
+    margin: 73px 20px 0 0;
   }
 
   .header-text {
     max-width: 100%;
     inline-size: 355px;
+    margin-top: -15px;
   }
 
   .decorated-zone::before {
     top: 10px;
-    right: clamp(5px, 5vw, 10px);
+    right: clamp(5px, 5vw, 8px);
   }
 
   .decorated-zone::after {
@@ -441,15 +433,25 @@ button {
     padding: 0 10px;
   }
 
+  .title {
+    inline-size: 355px;
+   margin-bottom: 10px;
+  }
+
+  .title-decor {
+    margin-bottom: 10px;
+  }
   .why-hard {
     grid-template-columns: 1fr;
-    margin-block-end: 50px;
+    gap: 10px;
+    margin-block-end: 45px;
   }
 
   .сoncentration {
-    margin-block-end: 50px;
+    margin-block-end: 45px;
+    gap: 10px;
   }
-
+  
   .concentration__card-item {
     flex-direction: column;
   }
@@ -457,49 +459,39 @@ button {
   .rules {
     grid-template-columns: 1fr;
     grid-template-rows: auto auto auto;
-    gap: 20px;
-    margin-block-end: 20px;
-  }
-
-  .rules__card {
-    padding-bottom: 20px;
-  }
-
-  .rules__card-title {
-    margin-top: 0;
-    margin-bottom: 10px;
+    gap: 10px;
+    margin-block-end: 35px;
   }
 
   .gallery {
     margin-block-end: 40px;
+
   }
 
   .gallery-title {
-    margin-block-end: 10px;
+    margin-bottom: 5px;
   }
 
-  .gallery-list {
-    display: flex;
-    flex-direction: column;
+   .gallery-list {
+    grid-template-columns: 1fr; /* Одна колонка */
+    grid-auto-rows: auto; /* Автоматическая высота строк */
     gap: 5px;
+  }
+  
+  /* Сбрасываем все предыдущие назначения */
+  .gallery__item:nth-child(1),
+  .gallery__item:nth-child(2),
+  .gallery__item:nth-child(3),
+  .gallery__item:nth-child(4),
+  .gallery__item:nth-child(5) {
+    grid-column: 1; /* Занимает первую и единственную колонку */
+    grid-row: auto; /* Автоматический ряд */
   }
 
   .footer {
-    min-height: 668px;
-    padding: 0;
+  min-height: 668px;
+  padding: 0 ;
   }
+}
 
-  .heading {
-    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
-    line-height: 83%;
-  }
-
-  .title {
-    inline-size: 355px;
-    margin-bottom: 15px;
-  }
-
-  .title-decor {
-    margin-bottom: 10px;
-  }
 }

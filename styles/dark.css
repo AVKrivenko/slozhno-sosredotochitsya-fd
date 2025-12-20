@@ -17,6 +17,7 @@
   --accent-link:#F1B2CE;
   --btn-hover:rgba(255, 0, 112, 0.40);
   --title:#FF0070;
+  --page-bg-color:#000028;
 
   }
   .decorative__element {
@@ -41,3 +42,5 @@
   --title:#FF0070;
   
 }
+html.theme-dark .decorative__element {
+  display: flex;}
