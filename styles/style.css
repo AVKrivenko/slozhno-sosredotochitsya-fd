@@ -399,7 +399,7 @@ button {
 }
  
 /* Медиа-запрос для 375px */
-@media (max-width: 475px) {
+@media (max-width: 550px) {
   .header {
     min-height: 668px;
     margin-block-end: 40px;
